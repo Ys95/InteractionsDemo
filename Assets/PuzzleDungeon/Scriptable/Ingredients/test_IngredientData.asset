@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e8c716c99e4f079b392b8149f09355, type: 3}
+  m_Name: test_IngredientData
+  m_EditorClassIdentifier: 
+  displayName: test
+  model: {fileID: 4459712560618730946, guid: 5469c2ebb91e6cf43973019fc744f89e, type: 3}
+  processingData:
+  - ProcessingType: 0
+    ProcessingStages:
+    - Index: 0
+    - Index: 1
+    - Index: 2
+    - Index: 3
+    IngredientModelsVariants: {fileID: 7909028289252800452, guid: 8a13c4f438244a449b934777b82b10b6,
+      type: 3}
