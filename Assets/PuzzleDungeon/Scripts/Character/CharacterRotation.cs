@@ -53,7 +53,7 @@ namespace PuzzleDungeon.Character
             public Rigidbody P_RotatingRigidbody => rotatingRigidbody;
 
             public float ClampRotationValue(float value) => clampRotation ? Mathf.Clamp(value, minRotation, maxRotation) : value;
-            
+
             public void SetRotation(Quaternion newRot)
             {
                 if (rotationMode == RotationMode.RigidBody)
@@ -61,12 +61,13 @@ namespace PuzzleDungeon.Character
                     rotatingRigidbody.MoveRotation(newRot);
                     return;
                 }
-                
+
                 if (useLocalRotation)
                 {
                     rotatingTransform.localRotation = newRot;
                     return;
                 }
+
                 rotatingTransform.rotation = newRot;
             }
         }
@@ -89,17 +90,14 @@ namespace PuzzleDungeon.Character
             P_RawLookVector = value;
         }
         
-        public override void Initialize()
-        {
-            _horizontalRotation = rotatingHorizontally.P_EulerAngles.x;
-            _verticalRotation   = rotatingVertically.P_EulerAngles.y;
-            _rotationAllowed    = true;
-        }
+        public void LockRotation() => _rotationAllowed = false;
+
+        public void UnlockRotation() => _rotationAllowed = true;
 
         private void Rotate()
         {
-            if(!_rotationAllowed) return;
-            
+            if (!_rotationAllowed) return;
+
             _horizontalRotation = rotatingHorizontally.ClampRotationValue(_horizontalRotation + (P_RawLookVector.x * speed * Time.deltaTime));
             _verticalRotation   = rotatingVertically.ClampRotationValue(_verticalRotation     - (P_RawLookVector.y * speed * Time.deltaTime));
 
@@ -110,30 +108,32 @@ namespace PuzzleDungeon.Character
             rotatingVertically.SetRotation(Quaternion.Slerp(newVerticalQuaternion,     rotatingVertically.P_Rotation,   smoothing));
         }
 
-        public void LockRotation() => _rotationAllowed = false;
+        #region CharacterComponent
 
-        public void UnlockRotation() => _rotationAllowed = true;
+        public override void Initialize()
+        {
+            _horizontalRotation = rotatingHorizontally.P_EulerAngles.x;
+            _verticalRotation   = rotatingVertically.P_EulerAngles.y;
+            _rotationAllowed    = true;
+        }
 
         public override void ProcessUpdate()
         {
             Rotate();
         }
-        
-        #region IInputReceiver
 
-        public void ReceiveInputUpdate(InputManager input)
-        {
-            SetLookVector(input.P_MouseVector2.P_CurrentValue);
-        }
+        #endregion
+
+        #region IInputReceiver
 
         public void ListenToInputEvents(InputManager input)
         {
-           // input.P_MouseVector2.E_ValueUpdated += SetLookVector;
+            input.P_MouseVector2.E_ValueUpdated += SetLookVector;
         }
 
         public void StopListeningToInputEvents(InputManager input)
         {
-            //input.P_MouseVector2.E_ValueUpdated -= SetLookVector;
+            input.P_MouseVector2.E_ValueUpdated -= SetLookVector;
         }
 
         #endregion

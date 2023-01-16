@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Default_GrabbedObjectProperties
   m_EditorClassIdentifier: 
   grabbedObjectProperties:
-    GrabForce: 150
-    MaxDistanceFromGrabbedObject: 5
+    GrabForce: 30
+    MultiplyGrabForceByDistance: 1
+    ThrowForce: 5
+    MaxDistanceFromGrabbedObject: 2
     GrabbedDrag: 15
     GrabbedAngularDrag: 0.5
-    ThrowForce: 15
-    MakeObjectKinematic: 1
     constraintsEditor:
       _freezePositionX: 0
       _freezePositionY: 0
       _freezePositionZ: 0
-      _freezeRotationX: 1
+      _freezeRotationX: 0
       _freezeRotationY: 1
-      _freezeRotationZ: 1
-    ShouldMoveOnlyAnchorWhileGrabbing: 0
-    GrabAnchorLocalConstraints: {x: 15, y: 15}
+      _freezeRotationZ: 0
+    AnchorMovingMode: 0
+    AnchorMovingModeMouseAxisMapping:
+      MouseXAnchorAxis: 0
+      MouseYAnchorAxis: 2
+      MouseScrollAnchorAxis: 1
+    MoveAnchorInGlobalSpace: 0
+    MoveAnchorOnObjectPosition: 0
+    AnchorMovingModeLocalConstraints: {x: 0, y: 0, z: 0}
     ModifyMouseSensitivity: 0
     MouseSensitivity: 0

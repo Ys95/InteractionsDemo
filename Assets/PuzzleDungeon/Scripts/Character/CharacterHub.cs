@@ -8,14 +8,14 @@ namespace PuzzleDungeon.Character
     public class CharacterHub : MonoBehaviour
     {
         [SerializeField] private Animator animator;
-        
+
         private List<CharacterComponent> _allCharacterComponents;
         private List<IInputReceiver>     _inputReceivers;
         private InputManager             _inputManager;
-        
+
         public InputManager P_InputManager => _inputManager;
         public Animator     P_Animator     => animator;
-        
+
         public T GetCharacterComponent<T>() where T : CharacterComponent
         {
             if (_allCharacterComponents == null)
@@ -32,10 +32,10 @@ namespace PuzzleDungeon.Character
             _allCharacterComponents = new List<CharacterComponent>();
             _inputReceivers         = new List<IInputReceiver>();
             _inputManager           = InputManager.Instance;
-            
+
             _allCharacterComponents.AddRange(GetComponentsInChildren<CharacterComponent>());
             _inputReceivers.AddRange(GetComponentsInChildren<IInputReceiver>());
-            
+
             foreach (var cc in _allCharacterComponents)
             {
                 cc.P_CharacterHub = this;
@@ -49,7 +49,7 @@ namespace PuzzleDungeon.Character
             {
                 cc.ProcessHubEnable();
             }
-            
+
             foreach (var ir in _inputReceivers)
             {
                 ir.ListenToInputEvents(_inputManager);
@@ -69,17 +69,8 @@ namespace PuzzleDungeon.Character
             }
         }
 
-        private void ProcessMovementState()
-        {
-        }
-
         private void Update()
         {
-            foreach (var ir in _inputReceivers)
-            {
-                ir.ReceiveInputUpdate(_inputManager);
-            }
-            
             foreach (var cc in _allCharacterComponents)
             {
                 cc.ProcessUpdate();

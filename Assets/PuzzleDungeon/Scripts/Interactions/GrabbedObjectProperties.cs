@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using PuzzleDungeon.Character;
 using UnityEngine;
 
-namespace Alchemist.Scripts.Scriptable
+namespace PuzzleDungeon.Interactions
 {
     [Serializable]
     public struct GrabbedObjectProperties
@@ -13,7 +13,7 @@ namespace Alchemist.Scripts.Scriptable
             [SerializeField] private bool _freezePositionX;
             [SerializeField] private bool _freezePositionY;
             [SerializeField] private bool _freezePositionZ;
-                
+
             [Space]
             [SerializeField] private bool _freezeRotationX;
             [SerializeField] private bool _freezeRotationY;
@@ -27,27 +27,27 @@ namespace Alchemist.Scripts.Scriptable
                 {
                     c = c | RigidbodyConstraints.FreezePositionX;
                 }
-                    
+
                 if (_freezePositionY)
                 {
                     c = c | RigidbodyConstraints.FreezePositionY;
                 }
-                    
+
                 if (_freezePositionZ)
                 {
                     c = c | RigidbodyConstraints.FreezePositionZ;
                 }
-                    
+
                 if (_freezeRotationX)
                 {
                     c = c | RigidbodyConstraints.FreezeRotationX;
                 }
-                    
+
                 if (_freezeRotationY)
                 {
                     c = c | RigidbodyConstraints.FreezeRotationY;
                 }
-                    
+
                 if (_freezeRotationZ)
                 {
                     c = c | RigidbodyConstraints.FreezeRotationZ;
@@ -56,20 +56,27 @@ namespace Alchemist.Scripts.Scriptable
                 return c;
             }
         }
-        
+
+        [Header("Grab")]
         public float GrabForce;
+        public bool  MultiplyGrabForceByDistance;
+        public float ThrowForce;
         public float MaxDistanceFromGrabbedObject;
 
-        [Space]
+        [Header("Grabbed body")]
         public float GrabbedDrag;
-        public float                      GrabbedAngularDrag;
-        public float                      ThrowForce;
-        public bool                       MakeObjectKinematic;
+        public                   float                      GrabbedAngularDrag;
         [SerializeField] private RigidbodyConstraintsEditor constraintsEditor;
-        public bool                       ShouldMoveOnlyAnchorWhileGrabbing;
-        public Vector2              GrabAnchorLocalConstraints;
-        public bool                 ModifyMouseSensitivity;
-        public float                MouseSensitivity;
+
+        [Header("Anchor")]
+        public bool AnchorMovingMode;
+        public CharacterInteractions.AnchorMovingModeMouseAxisMapping AnchorMovingModeMouseAxisMapping;
+        public bool                                                   MoveAnchorOnObjectPosition;
+        public Vector3                                                AnchorMovingModeLocalConstraints;
+
+        [Header("Mouse")]
+        public bool ModifyMouseSensitivity;
+        public float MouseSensitivity;
 
         public RigidbodyConstraints P_RigidbodyConstraints => constraintsEditor.GetConstraints();
     }

@@ -24,6 +24,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Action",
+                    "type": "Button",
+                    "id": "820a0e58-765b-4c9d-8229-355eba54252e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "PrimaryFire",
                     "type": "Button",
                     "id": "bf12919b-32ba-4cad-9003-ee6fe9ba9616",
@@ -42,10 +51,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CameraZoom",
-                    "type": "Value",
+                    "name": "Scroll",
+                    "type": "PassThrough",
                     "id": "c8658a2f-450d-45fe-a78f-4d76511c4c26",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -57,6 +66,24 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "E",
+                    "type": "Button",
+                    "id": "40e26c26-464d-4e95-bb4c-7b1a0a9a12b3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Q",
+                    "type": "Button",
+                    "id": "3774f21a-18b8-4905-a3e4-6010eb154f1f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -140,17 +167,6 @@
                 },
                 {
                     "name": "",
-                    "id": "0a43a9c8-4729-4db0-ac2c-b9507f3ea45c",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "NormalizeVector2",
-                    "groups": "M&K",
-                    "action": "CameraZoom",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "be019a06-7439-418f-a35c-ce5a62190032",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
@@ -168,6 +184,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a43a9c8-4729-4db0-ac2c-b9507f3ea45c",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "M&K",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25fdd499-893a-4c7f-bebf-3206865d5856",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f912b7b1-12be-4bb4-b163-31077b72d351",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "E",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "452a2730-24e4-4b4b-9a35-848e9ba1adeb",
+                    "path": "<Keyboard>/q",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Q",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

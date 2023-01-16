@@ -1,38 +1,38 @@
 ﻿using System;
-using Alchemist;
 using PuzzleDungeon.Character;
+using PuzzleDungeon.Tools;
 using UnityEngine;
 
 namespace PuzzleDungeon.Interactions
 {
     public abstract class Interactable : MonoBehaviour
     {
-        [SerializeField] protected Outline outline;
-        [SerializeField] protected bool    changeLayerOnInteraction = true;
+        [SerializeField] protected OutlineFromPreset outline;
+        [SerializeField] protected bool              changeLayerOnInteraction = true;
 
         protected bool _isHighlighted;
         protected int  _defaultLayer;
 
         public event Action E_InteractionStarted;
         public event Action E_InteractionEnded;
-        
-        public          CharacterInteractions P_Initiator             { get; protected set; }
-        public          bool                  P_InteractionInProgress { get; protected set; }
+
+        public CharacterInteractions P_Initiator             { get; protected set; }
+        public bool                  P_InteractionInProgress { get; protected set; }
 
         public virtual void HighlightObject()
         {
-            if(_isHighlighted || outline==null)
+            if (_isHighlighted || outline == null)
             {
                 return;
             }
 
             outline.enabled = true;
-            _isHighlighted = true;
+            _isHighlighted  = true;
         }
 
         public virtual void StopHighlightingObject()
         {
-            if(!_isHighlighted)
+            if (!_isHighlighted)
             {
                 return;
             }
@@ -40,16 +40,24 @@ namespace PuzzleDungeon.Interactions
             outline.enabled = false;
             _isHighlighted  = false;
         }
-        
+
         public virtual void PrimaryInteractionButtonReleased()
         {
         }
-        
+
         public virtual void SecondaryInteractionButtonPressed()
         {
         }
-        
+
         public virtual void SecondaryInteractionButtonReleased()
+        {
+        }
+
+        public virtual void ActionButtonPressed()
+        {
+        }
+
+        public virtual void ActionButtonReleased()
         {
         }
 
@@ -58,7 +66,7 @@ namespace PuzzleDungeon.Interactions
             P_InteractionInProgress = true;
             P_Initiator             = initiator;
             E_InteractionStarted?.Invoke();
-            _defaultLayer    = gameObject.layer;
+            _defaultLayer = gameObject.layer;
             if (changeLayerOnInteraction)
             {
                 gameObject.layer = Layers.InteractedWithInteractable;
@@ -71,6 +79,14 @@ namespace PuzzleDungeon.Interactions
             E_InteractionEnded?.Invoke();
             P_Initiator      = null;
             gameObject.layer = _defaultLayer;
+        }
+
+        protected virtual void Awake()
+        {
+            if (outline == null)
+            {
+                outline = GetComponent<OutlineFromPreset>();
+            }
         }
     }
 }

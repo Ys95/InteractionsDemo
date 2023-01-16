@@ -8,7 +8,7 @@ namespace PuzzleDungeon.Interactions
         [SerializeField] private Interactable dispensedObject;
         [SerializeField] private Transform    spawnPos;
         [SerializeField] private bool         forceInteractionOnSpawn = true;
-        
+
         public override void StartInteraction(CharacterInteractions initiator)
         {
             base.StartInteraction(initiator);

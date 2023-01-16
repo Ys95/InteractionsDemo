@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using PuzzleDungeon.Interactions;
+using UnityEngine;
 
-namespace Alchemist.Scripts.Scriptable
+namespace PuzzleDungeon.Scriptable
 {
-    [CreateAssetMenu(fileName = "_GrabbedObjectProperties", menuName = "Alchemist/Interactions", order = 0)]
+    [CreateAssetMenu(fileName = "_GrabbedObjectProperties", menuName = "PuzzleDungeon/Interactions", order = 0)]
     public class GrabbedObjectPropertiesSetup : ScriptableObject
     {
         [SerializeField] private GrabbedObjectProperties grabbedObjectProperties;

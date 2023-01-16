@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PuzzleDungeon/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/PuzzleDungeon/Scenes/Dungeon.unity
+    guid: 2f182050f3c839649b531c30ac89f17f
   m_configObjects: {}

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0817213e717045b39ea0128554b6fb26, type: 3}
+  m_Name: Levers_GrabbedObjectProperties
+  m_EditorClassIdentifier: 
+  grabbedObjectProperties:
+    GrabForce: 15
+    MultiplyGrabForceByDistance: 1
+    ThrowForce: 0
+    MaxDistanceFromGrabbedObject: 2.5
+    GrabbedDrag: 1
+    GrabbedAngularDrag: 1
+    constraintsEditor:
+      _freezePositionX: 1
+      _freezePositionY: 0
+      _freezePositionZ: 1
+      _freezeRotationX: 0
+      _freezeRotationY: 0
+      _freezeRotationZ: 0
+    AnchorMovingMode: 1
+    AnchorMovingModeMouseAxisMapping:
+      MouseXAnchorAxis: 3
+      MouseYAnchorAxis: 1
+      MouseScrollAnchorAxis: 3
+    MoveAnchorOnObjectPosition: 1
+    AnchorMovingModeLocalConstraints: {x: 1, y: 1, z: 1}
+    ModifyMouseSensitivity: 1
+    MouseSensitivity: 0.05

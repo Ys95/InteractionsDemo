@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Tide
+namespace PuzzleDungeon
 {
     [Serializable]
     public abstract class AnimatorParameter
@@ -26,7 +25,7 @@ namespace Tide
 
         public void UpdateAnimator(float val)
         {
-            if(animator==null)
+            if (animator == null)
             {
                 return;
             }
@@ -42,7 +41,7 @@ namespace Tide
 
         public void UpdateAnimator(bool val)
         {
-            if(animator ==null)
+            if (animator == null)
             {
                 return;
             }

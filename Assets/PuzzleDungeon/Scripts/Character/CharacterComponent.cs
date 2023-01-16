@@ -6,7 +6,6 @@ namespace PuzzleDungeon.Character
     public abstract class CharacterComponent : MonoBehaviour
     {
         public CharacterHub P_CharacterHub { get; set; }
-        public InputManager P_Input        { get; set; }
 
         public virtual void Initialize()
         {
