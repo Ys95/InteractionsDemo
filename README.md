@@ -5,8 +5,6 @@ Simple FPP controller with interaction system. My goal was to:
 1. Make it immersive by requiring player to simulate interaction with his mouse i.e actually spin it when spinning valve, pull it when pulling lever.
 2. Make it expandable and adjustable, so I can use it in my future projects.
 
-It's more of a code sample rather than a game.
-
 https://user-images.githubusercontent.com/80332947/212591350-630ac35a-50e1-4e95-a025-d24707ab00fe.mp4
 
 
