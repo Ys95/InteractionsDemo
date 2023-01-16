@@ -23,7 +23,7 @@ https://user-images.githubusercontent.com/80332947/212591986-349307cc-b1e3-40a2-
 * [Scripts Folder](https://github.com/Ys95/InteractionsDemo/tree/main/Assets/PuzzleDungeon/Scripts)
 * [Itch.io (Playable in browser)](https://ys95.itch.io/dungeon-demo)
 
-## Quick destricption of most important classes:
+## Quick description of most important classes:
 * [InputManager](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Input/InputManager.cs) - Based on new input system, responsible for processing input so it can be used by other scripts.
 * [CharacterCompontent](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Character/CharacterComponent.cs) - Abstract class, base for various player functionalities and abilities like moving or interacting. Whole concept was inspired by TopDown Engine.
 * [CharacterHub](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Character/CharacterHub.cs) - Manages character components. 
