@@ -2,7 +2,7 @@
 
 It's still WIP.
 
-Simple FPP controller with interaction system. My goal was to:
+Simple FPP controller with interaction system. My goal is to:
 
 1. Make it immersive by requiring player to simulate interaction with his mouse i.e actually spin it when spinning valve, pull it when pulling lever.
 2. Make it expandable and adjustable, so I can use it in my future projects.
