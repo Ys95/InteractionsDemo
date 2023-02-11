@@ -1,6 +1,6 @@
 # About
 
-It's still WIP.
+WIP.
 
 Simple FPP controller with interaction system. My goal is to:
 
@@ -25,7 +25,7 @@ https://user-images.githubusercontent.com/80332947/212591986-349307cc-b1e3-40a2-
 
 ## Quick description of most important classes:
 * [InputManager](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Input/InputManager.cs) - Based on new input system, responsible for processing input so it can be used by other scripts.
-* [CharacterCompontent](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Character/CharacterComponent.cs) - Abstract class, base for various player functionalities and abilities like moving or interacting. Whole concept was inspired by TopDown Engine.
+* [CharacterCompontent](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Character/CharacterComponent.cs) - Abstract class, base for various player functionalities and abilities like moving or interacting.
 * [CharacterHub](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Character/CharacterHub.cs) - Manages character components. 
 * [CharacterMovement](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Character/CharacterMovement.cs) - Component that allows player to move. Based on CharacterController, with simple movement physics simulation like counter movement when changing direction or gradual velocity loss when player stops moving.
 * [CharacterInteraction](https://github.com/Ys95/InteractionsDemo/blob/main/Assets/PuzzleDungeon/Scripts/Character/CharacterInteractions.cs) - Allows to interact with environment and search for interactable objects, manages "anchor" which is like a player hand that is used to move objects etc.
